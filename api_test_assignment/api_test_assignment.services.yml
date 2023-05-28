@@ -1,0 +1,12 @@
+services:
+  api_test_assignment.db_helper:
+    class: Drupal\api_test_assignment\Services\DatabaseConnectionHelper
+    arguments: [ '@database' ]
+
+  api_test_assignment.api_connect:
+    class: Drupal\api_test_assignment\Services\ApiConnection
+    arguments: [ '@http_client', '@logger.factory' ]
+
+  api_test_assignment.api_adapter:
+    class: Drupal\api_test_assignment\Services\ApiAdapter
+    arguments: [ '@api_test_assignment.api_connect' ]

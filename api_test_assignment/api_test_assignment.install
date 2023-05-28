@@ -1,0 +1,42 @@
+<?php
+
+/**
+ * @file
+ * File for installation/uninstallation of api_test_assignment module.
+ */
+
+use Drupal\Core\Database\Database;
+
+/**
+ * Implements hook_install().
+ */
+function api_test_assignment_install() {
+  $spec = [
+    'description' => 'Table for saving the lowest exchange rates',
+    'fields' => [
+      'country_id' => [
+        'type' => 'varchar',
+        'length' => 10,
+        'not null' => TRUE,
+        'default' => '',
+      ],
+      'rate' => [
+        'type' => 'float',
+        'not null' => TRUE,
+        'default' => 0.0,
+      ],
+    ],
+    'primary key' => ['country_id'],
+  ];
+  $schema = \Drupal::database()->schema();
+  $schema->createTable('api_exchange_rate_comparison', $spec);
+}
+
+/**
+ * Implements hook_uninstall.
+ */
+function api_test_assignment_uninstall() {
+  $table = 'api_exchange_rate_comparison';
+  $schema = Database::getConnection()->schema();
+  $schema->dropTable($table);
+}

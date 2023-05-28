@@ -1,0 +1,17 @@
+api_test_assignment.write_rates:
+  path: '/write-rates'
+  defaults:
+    _controller: '\Drupal\api_test_assignment\Controller\RatesController::writeRates'
+  requirements:
+    _permission: 'access content'
+  options:
+    no_cache: 'TRUE'
+
+api_test_assignment.show_rates:
+  path: '/show-rates'
+  defaults:
+    _controller: '\Drupal\api_test_assignment\Controller\RatesController::showRates'
+  requirements:
+    _permission: 'access content'
+  options:
+    no_cache: 'TRUE'

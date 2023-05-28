@@ -1,0 +1,5 @@
+name: API test
+type: module
+core_version_requirement: ^9 || ^10
+description: Module for api assignment functionality
+

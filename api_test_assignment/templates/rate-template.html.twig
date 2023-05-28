@@ -1,0 +1,4 @@
+<p>Here is the cheapest rates:</p>
+{% for rate in rates %}
+<p> {{ rate.country_id }}: {{ rate.rate}} </p>
+{% endfor %}

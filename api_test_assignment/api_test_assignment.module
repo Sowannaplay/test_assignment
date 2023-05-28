@@ -1,0 +1,19 @@
+<?php
+
+/**
+ * @file
+ * File for hooks for api_test_assignment.
+ */
+
+/**
+ * Implements hook_theme().
+ */
+function api_test_assignment_theme($existing, $type, $theme, $path) {
+  return [
+    'rate_template' => [
+      'variables' => [
+        'rates' => [],
+      ],
+    ],
+  ];
+}
